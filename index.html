@@ -1,0 +1,267 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>AURUM 鎏金 · 独立设计奢品</title>
+    <meta name="description" content="AURUM 鎏金 —— 独立设计奢品独立站。甄选腕表、珠宝、香氛、皮具与生活臻品，支持在线选购、下单、支付与物流配送。">
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,500;0,600;0,700;1,400;1,500&family=Inter:wght@300;400;500;600&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <!-- 登录 / 注册（首页） -->
+    <div id="authView" class="auth-view">
+        <div class="auth-left">
+            <a class="brand auth-brand" href="#" aria-label="AURUM">
+                <span class="brand-logo" aria-hidden="true">
+                    <svg viewBox="0 0 24 24" fill="none" stroke="#9a7b3f" stroke-width="1.3" stroke-linecap="round" stroke-linejoin="round">
+                        <path d="M12 2.6 21.4 12 12 21.4 2.6 12Z"/>
+                        <path d="M12 7.6 16.4 12 12 16.4 7.6 12Z"/>
+                    </svg>
+                </span>
+                <span class="brand-text">AURUM<span class="brand-sub"> 鎏金</span></span>
+            </a>
+            <div class="auth-editorial">
+                <span class="eyebrow">MAISON AURUM</span>
+                <h1>隽永之美<br><em>静奢之选</em></h1>
+                <p>Crafted for the few, designed for the timeless.</p>
+                <ul class="auth-points">
+                    <li>顺丰速运 · 全场包邮</li>
+                    <li>7 天无理由退换</li>
+                    <li>正品保障 · 专属顾问</li>
+                </ul>
+            </div>
+            <div class="auth-foot">© 2026 AURUM MAISON</div>
+        </div>
+        <div class="auth-right">
+            <div class="auth-card" id="authCard"></div>
+        </div>
+    </div>
+
+    <!-- 商城（登录后） -->
+    <div id="shopView" class="shop-view" hidden>
+    <div class="page-wrapper">
+
+        <!-- 顶部公告条 -->
+        <div class="announce">
+            <div class="announce-track">
+                <span class="announce-item">新会员注册立减 ¥100</span>
+                <span class="announce-sep">◆</span>
+                <span class="announce-item">全场顺丰包邮 · 7 天无理由退换</span>
+                <span class="announce-sep">◆</span>
+                <span class="announce-item">正品保障 · 专属顾问一对一服务</span>
+            </div>
+        </div>
+
+        <!-- 顶部导航 -->
+        <header class="top-glass" id="topbar">
+            <div class="topbar-inner">
+                <a href="#home" class="brand" aria-label="AURUM 首页">
+                    <span class="brand-logo" aria-hidden="true">
+                        <svg viewBox="0 0 24 24" fill="none" stroke="url(#brandGrad)" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round">
+                            <defs>
+                                <linearGradient id="brandGrad" x1="0" y1="0" x2="24" y2="24">
+                                    <stop offset="0%" stop-color="#8a6a1a"/>
+                                    <stop offset="100%" stop-color="#c9a227"/>
+                                </linearGradient>
+                            </defs>
+                            <path d="M12 2.6 21.4 12 12 21.4 2.6 12Z"/>
+                            <path d="M12 7.6 16.4 12 12 16.4 7.6 12Z"/>
+                        </svg>
+                    </span>
+                    <span class="brand-text">AURUM<span class="brand-sub"> 鎏金</span></span>
+                </a>
+
+                <nav class="top-nav" aria-label="主导航">
+                    <a class="nav-link" href="#home">首页</a>
+                    <a class="nav-link" href="#catalog">全部臻品</a>
+                    <a class="nav-link" href="#about">品牌故事</a>
+                    <a class="nav-link" href="#orders">我的订单</a>
+                </nav>
+
+                <div class="top-actions">
+                    <button class="icon-btn" id="searchToggle" aria-label="搜索" title="搜索">
+                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="11" cy="11" r="8"/><line x1="21" y1="21" x2="16.65" y2="16.65"/></svg>
+                    </button>
+                    <button class="icon-btn" id="cartBtn" aria-label="购物车" title="购物车">
+                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="9" cy="21" r="1"/><circle cx="20" cy="21" r="1"/><path d="M1 1h4l2.68 13.39a2 2 0 0 0 2 1.61h9.72a2 2 0 0 0 2-1.61L23 6H6"/></svg>
+                        <span class="cart-badge" id="cartCount">0</span>
+                    </button>
+                    <button class="header-plus" id="plusEntry" type="button">成为 PLUS+ 会员</button>
+                    <div class="user-area" id="userArea"></div>
+                </div>
+            </div>
+            <!-- 搜索抽屉 -->
+            <div class="search-drawer" id="searchDrawer">
+                <div class="search-inner">
+                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="11" cy="11" r="8"/><line x1="21" y1="21" x2="16.65" y2="16.65"/></svg>
+                    <input type="text" id="searchInput" placeholder="搜索腕表、珠宝、香氛……" autocomplete="off">
+                    <button class="search-close" id="searchClose" aria-label="关闭">✕</button>
+                </div>
+            </div>
+        </header>
+
+        <main>
+            <!-- Hero -->
+            <section class="hero" id="home">
+                <div class="hero-inner">
+                    <div class="hero-copy">
+                        <span class="hero-pill"><span class="dot"></span>MAISON AURUM · 独立设计奢品</span>
+                        <h1 class="hero-title">隽永之美<br><span class="accent">静奢之选</span></h1>
+                        <p class="hero-sub">Crafted for the few, designed for the timeless.</p>
+                        <p class="hero-desc">AURUM 以克制的线条、考究的材质与恰到好处的金，甄选腕表、珠宝、香氛与皮具。我们相信，真正的奢华从不需要喧哗——它只在细节里，安静地等你发现。</p>
+                        <div class="hero-cta">
+                            <a class="btn btn-primary" href="#catalog">浏览臻品</a>
+                        </div>
+                        <div class="hero-trust">
+                            <span class="trust"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="1" y="3" width="15" height="13"/><polygon points="16 8 20 8 23 11 23 16 16 16 16 8"/><circle cx="5.5" cy="18.5" r="2.5"/><circle cx="18.5" cy="18.5" r="2.5"/></svg>顺丰速运</span>
+                            <span class="trust"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M3 12a9 9 0 1 0 9-9 9.75 9.75 0 0 0-6.74 2.74L3 8"/><path d="M3 3v5h5"/></svg>7 天无理由</span>
+                            <span class="trust"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg>正品保障</span>
+                        </div>
+                    </div>
+
+                    <div class="hero-showcase">
+                        <figure class="showcase-frame">
+                            <div class="showcase-card" id="featuredCard"></div>
+                            <figcaption class="featured-caption">
+                                <span class="fc-name">The Chronograph · 41mm</span>
+                                <span class="fc-price" id="featuredPrice">¥ —</span>
+                            </figcaption>
+                        </figure>
+                    </div>
+                </div>
+            </section>
+
+            <!-- 臻品目录 -->
+            <section class="catalog" id="catalog">
+                <div class="section-head">
+                    <div class="section-label">COLLECTION<span>· 全部臻品</span></div>
+                    <h2 class="section-title">甄选每一件<em>心动之物</em></h2>
+                </div>
+
+                <div class="toolbar">
+                    <div class="chips" id="categoryChips" role="tablist"></div>
+                    <div class="toolbar-right">
+                        <div class="sort-box">
+                            <select id="sortSelect" aria-label="排序">
+                                <option value="featured">推荐排序</option>
+                                <option value="price-asc">价格从低到高</option>
+                                <option value="price-desc">价格从高到低</option>
+                                <option value="rating">评分最高</option>
+                            </select>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="product-grid" id="productGrid"></div>
+                <div class="empty-state" id="emptyState" hidden>未找到相关臻品，换个关键词试试。</div>
+            </section>
+
+            <!-- 编辑主张 -->
+            <section class="editorial" id="editorial">
+                <div class="editorial-inner">
+                    <span class="editorial-kicker">THE ART OF LESS</span>
+                    <blockquote class="editorial-quote">真正的奢华，<br>是恰到好处的<span>克制</span>。</blockquote>
+                    <p class="editorial-credit">AURUM MAISON · 设计手记</p>
+                </div>
+            </section>
+
+            <!-- 品牌故事 -->
+            <section class="about" id="about">
+                <div class="about-inner">
+                    <div class="section-label">MAISON<span>· 品牌故事</span></div>
+                    <div class="about-grid">
+                        <div class="about-copy">
+                            <h2 class="section-title">克制的设计<em>与持久的质感</em></h2>
+                            <p>AURUM 相信，真正的高级无需喧嚣。我们以极简的轮廓、考究的材质与恰到好处的金色点缀，去呈现一件物件本应拥有的样子。每一件臻品，都经过设计与工艺的反复打磨。</p>
+                            <p>这是一家「独立站」——它不依附于任何平台，从选品、下单到物流配送，都由我们自己为你完整交付。</p>
+                            <div class="about-stats">
+                                <div class="stat"><b>68</b><span>件在售臻品</span></div>
+                                <div class="stat"><b>4.9</b><span>平均好评率</span></div>
+                                <div class="stat"><b>24h</b><span>专属顾问响应</span></div>
+                            </div>
+                        </div>
+                        <div class="about-cards">
+                            <div class="value-card">
+                                <div class="vc-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/></svg></div>
+                                <h4>甄选</h4>
+                                <p>只收录经得起时间考验的设计与工艺。</p>
+                            </div>
+                            <div class="value-card">
+                                <div class="vc-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><rect x="1" y="3" width="15" height="13"/><polygon points="16 8 20 8 23 11 23 16 16 16 16 8"/><circle cx="5.5" cy="18.5" r="2.5"/><circle cx="18.5" cy="18.5" r="2.5"/></svg></div>
+                                <h4>配送</h4>
+                                <p>顺丰速运全程可追踪，下单后 24 小时内发出。</p>
+                            </div>
+                            <div class="value-card">
+                                <div class="vc-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z"/></svg></div>
+                                <h4>服务</h4>
+                                <p>7 天无理由退换，专属顾问一对一答疑。</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- 我的订单 / 物流 -->
+            <section class="orders" id="orders">
+                <div class="section-head">
+                    <div class="section-label">ORDERS<span>· 我的订单与物流</span></div>
+                    <h2 class="section-title">全程可追踪<em>的交付</em></h2>
+                </div>
+                <div id="ordersList"></div>
+            </section>
+        </main>
+
+        <footer class="site-footer">
+            <div class="footer-inner">
+                <div class="footer-brand">
+                    <span class="brand-text">AURUM<span class="brand-sub"> 鎏金</span></span>
+                    <p>独立设计奢品 · 为热爱而设计</p>
+                </div>
+                <div class="footer-links">
+                    <a href="#catalog">全部臻品</a>
+                    <a href="#about">品牌故事</a>
+                    <a href="#orders">我的订单</a>
+                </div>
+                <div class="footer-note">
+                    © 2026 AURUM 鎏金 · 本站为独立站设计演示，商品与品牌均为虚构
+                </div>
+            </div>
+        </footer>
+    </div>
+    </div><!-- /#shopView -->
+
+    <!-- 购物车抽屉 -->
+    <div class="drawer-mask" id="cartMask"></div>
+    <aside class="cart-drawer" id="cartDrawer" aria-label="购物车">
+        <div class="drawer-head">
+            <h3>购物车 <span id="cartTitleCount">0 件</span></h3>
+            <button class="icon-btn" id="cartClose" aria-label="关闭">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="18" y1="6" x2="6" y2="18"/><line x1="6" y1="6" x2="18" y2="18"/></svg>
+            </button>
+        </div>
+        <div class="drawer-body" id="cartBody"></div>
+        <div class="drawer-foot" id="cartFoot"></div>
+    </aside>
+
+    <!-- 商品详情弹窗 -->
+    <div class="modal-mask" id="productMask">
+        <div class="modal product-modal" id="productModal" role="dialog" aria-modal="true"></div>
+    </div>
+
+    <!-- 结算弹窗 -->
+    <div class="modal-mask" id="checkoutMask">
+        <div class="modal checkout-modal" id="checkoutModal" role="dialog" aria-modal="true"></div>
+    </div>
+
+    <!-- 提示 -->
+    <div class="toast" id="toast" aria-live="polite"></div>
+
+    <script src="data.js"></script>
+    <script src="app.js"></script>
+</body>
+</html>
